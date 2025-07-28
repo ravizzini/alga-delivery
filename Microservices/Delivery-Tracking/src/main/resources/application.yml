@@ -6,12 +6,12 @@ spring:
       ddl-auto: update
     show-sql: false
   datasource:
-    url: jdbc:postgresql://localhost:5432/deliverydb
+    url: jdbc:postgresql://192.168.0.13:5432/deliverydb
     username: postgres
     password: postgres
   kafka:
     producer:
-      bootstrap-servers: localhost:9092
+      bootstrap-servers: 192.168.0.13:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
@@ -23,7 +23,7 @@ spring:
 eureka:
   client:
     server-url:
-      default-zone: http://localhost:8761/eureka/
+      default-zone: http://192.168.0.13:8761/eureka/
   instance:
     instance-id: ${random.value}
     prefer-ip-address: true
